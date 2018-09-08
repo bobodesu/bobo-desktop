@@ -1,0 +1,18 @@
+<svg width="580" height="400" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <title>background</title>
+  <rect fill-opacity="0" fill="#fff" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <rect rx="9" id="svg_1" height="297" width="462" y="50.449997" x="60.5" stroke-width="11.5" stroke="#fff" fill="#000" fill-opacity="0"/>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_6" y2="150.449997" x2="63.5" y1="52.449997" x1="175.5" fill-opacity="null" stroke-opacity="null" stroke-width="11.5" stroke="#fff" fill="none"/>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_7" y2="258.450005" x2="63.5" y1="345.450004" x1="175.5" fill-opacity="null" stroke-opacity="null" stroke-width="11.5" stroke="#fff" fill="none"/>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_8" y2="150.449997" x2="521" y1="52.449997" x1="416.5" fill-opacity="null" stroke-opacity="null" stroke-width="11.5" stroke="#fff" fill="none"/>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_9" y2="258.450005" x2="521" y1="345.450004" x1="416.5" fill-opacity="null" stroke-opacity="null" stroke-width="11.5" stroke="#fff" fill="none"/>
+  <path id="svg_10" d="m177.5,49.449997l-116.5,98.550003l0,110l119,91l244,-1l99,-87l2,-115l-110,-95l-237.5,-1.550003z" stroke-opacity="null" stroke-width="0" stroke="#fff" fill="#fff"/>
+ </g>
+</svg>

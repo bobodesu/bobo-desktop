@@ -1,0 +1,333 @@
+html,body,div{
+    border:none;
+    padding:0;
+    margin:0;
+    font-family: "微软雅黑";
+}
+.desktop{
+    height:100vh;
+    width:100vw;
+    overflow: hidden;
+    position: fixed;
+    top:0;
+    left:0;
+}
+
+
+.fa-bg{
+    height:100vh;
+    width:100vw;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index:1;
+    background-size:cover;
+    background-position:center;
+}
+
+
+.fa-icon{
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content:flex-start;
+    height:100vh;
+    width:100vw;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index:2;
+}
+.icon{
+    width:80px;
+    height:120px;
+    margin:5px;
+    transition:broder 0.2s,background 0.2s;
+    border:rgba(146,146,255,0) solid 1px;
+}
+.icon:hover{
+    background-color:rgba(55, 90, 177, 0.13);
+    border:rgba(146,146,255,1) solid 1px;
+}
+.icon-ico{
+    width:70px;
+    height:70px;
+    margin:5px;
+    display:block;
+    background-size:cover;
+    background-position:center;
+}
+.icon-name{
+    width:80px;
+    height:35px;
+    margin-top:5px;
+    font-size:16px;
+    text-align: center;
+    color:#fff;
+    text-shadow:1px 1px 2px rgba(0,0,0,0.7),-1px -1px 2px rgba(0,0,0,0.7);
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+
+
+.fa-window{
+    height:0px;
+    width:0px;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index:3;
+}
+.fa-windowchange{
+    height:100vh;
+    width:100vw;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:5;
+    display:none;
+}
+.fa-footer{
+    height:40px;
+    background-color:#ffe70dc2;
+    position:fixed;
+    bottom:0;
+    width:100vw;
+    left:0;
+    z-index:4;
+}
+.window{
+    position:absolute;
+    background-color:rgba(0,0,0,0.3);
+}
+.window-border,.window-val,.window-resize{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+.window-border{
+    width:calc(100% - 10px);
+    height:calc(100% - 10px);
+    left:5px;
+    top:5px;
+}
+.window-resize{
+    z-index:0;
+    border:1px solid rgb(107, 96, 0);
+    background-color:rgb(255, 246, 165);
+    transition: background 0.3s;
+}
+.window-title,.window-icon,.window-close,.window-cover{
+    position: absolute;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+.window-icon{
+    left:0px;
+    top:0px;
+    height:20px;
+    width:20px;
+    background-size:cover;
+    background-position: center;
+    padding: 7px;
+    padding-top: 2px;
+    padding: 2px 7px 12px 7px;
+    background-origin: content-box;
+    background-repeat: no-repeat;
+    
+}
+.window-title{
+    left:34px;
+    top:0px;
+    height:35px;
+    line-height: 25px;
+    width:calc(100% - 74px);
+    font-size:14px;
+}
+.window-close{
+    right:0px;
+    top:-4px;
+    height:34px;
+    width:41px;
+}
+.window-close{
+    background-color:#FF323200;
+    transition: background 0.1s;
+}
+.window-close:hover{
+    background-color:#FF3232ff;
+}
+.window-close:active{
+    background-color:rgb(255, 92, 92);
+}
+.window-close:after{
+    position: absolute;
+    content: 'X';
+    right:15px;
+    top:7px;
+    font-size: 14px;
+    color: #ff9e9e;
+    transform: scaleX(1.4);
+    display:block;
+    font-family: "微软雅黑";
+}
+.window-val{
+    background-color:#fff;
+    margin:0;
+    padding:0;
+    top:35px;
+    left:5px;
+    width:calc(100% - 10px);
+    height:calc(100% - 40px);
+}
+.window-val iframe{
+    border:none;
+    width:100%;
+    height:100%;
+}
+.window-cover{
+    width:calc(100% - 10px);
+    height:calc(100% - 45px);
+    left:5px;
+    top:40px;
+    display:block;
+}
+
+.window-resize-n,.window-resize-s,.window-resize-w,.window-resize-e,.window-resize-sw,.window-resize-se,.window-resize-nw,.window-resize-ne{
+    position: absolute;
+}
+.window-resize-n{
+    left:5px;
+    width:calc(100% - 10px);
+    top:0;
+    height:5px;
+    cursor: n-resize;
+}
+.window-resize-s{
+    left:5px;
+    width:calc(100% - 10px);
+    bottom:0;
+    height:5px;
+    cursor: n-resize;
+}
+.window-resize-w{
+    left:0px;
+    width:5px;
+    top:5px;
+    height:calc(100% - 10px);
+    cursor:e-resize;
+}
+.window-resize-e{
+    right:0px;
+    width:5px;
+    top:5px;
+    height:calc(100% - 10px);
+    cursor:e-resize;
+}
+.window-resize-nw{
+    width:5px;
+    height:5px;
+    left:0px;
+    top:0px;
+    cursor:se-resize;
+}
+.window-resize-ne{
+    width:5px;
+    height:5px;
+    right:0px;
+    top:0px;
+    cursor:sw-resize;
+}
+.window-resize-sw{
+    width:5px;
+    height:5px;
+    left:0px;
+    bottom:0px;
+    cursor:sw-resize;
+}
+.window-resize-se{
+    width:5px;
+    height:5px;
+    right:0px;
+    bottom:0px;
+    cursor:se-resize;
+}
+
+.window-handle .window-cover{
+    display:none;
+}
+.window-resize{
+    background-color:rgb(255, 246, 165);
+    transition: background 0.1s;
+}
+.window-handle .window-resize{
+    background-color: rgb(255, 238, 80);
+}
+
+
+.footer-left,.footer-right{
+    height:100%;
+    line-height:40px;
+    display:inline-block;
+    width:auto;
+    color:#fff;
+    font-family: "微软雅黑";
+}
+.footer-left>*,.footer-right>*{
+    display:block;
+    height:40px;
+    margin:0 4px 0 4px;
+    padding:0 8px 0 8px;
+    transition:background 0.2s;
+}
+.footer-left>*:hover,.footer-right>*:hover{
+    background-color:#ffffff4b;
+}
+.footer-left{
+    text-align: left;
+    float:left;
+}
+.footer-right{
+    text-align: right;
+    float:right;
+}
+.footer-right>*{
+    text-align: center;
+    float:right;
+}
+.footer-left>*{
+    text-align: center;
+    float:left;
+}
+
+.footer-time{
+    font-size:12px;
+    width:55px;
+    line-height: 20px;
+    font-weight: bold;
+    text-align: center;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+.footer-fullscreen{
+    width:40px;
+    background-image:url(../image/fullscreen.svg);
+    background-size:50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+.footer-fullscreen:hover{
+    background-size:60%;
+}

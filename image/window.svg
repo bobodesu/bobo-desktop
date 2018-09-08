@@ -1,0 +1,27 @@
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <linearGradient spreadMethod="pad" y2="1" x2="1" y1="0" x1="0" id="svg_17">
+   <stop offset="0.898438" stop-color="#c923ea"/>
+   <stop offset="1" stop-color="#36dc15"/>
+  </linearGradient>
+  <linearGradient spreadMethod="pad" y2="0" x2="1" y1="1" x1="0" id="svg_24">
+   <stop offset="0.898438" stop-color="#c923ea"/>
+   <stop offset="1" stop-color="#36dc15"/>
+  </linearGradient>
+  <linearGradient spreadMethod="pad" y2="0" x2="1" y1="1" x1="0" id="svg_25">
+   <stop offset="0.898438" stop-color="#c923ea"/>
+   <stop offset="1" stop-color="#36dc15"/>
+  </linearGradient>
+ </defs>
+ <g>
+  <title>background</title>
+  <rect fill-opacity="0" fill="rgba(255.255.255,0)" id="canvas_background" height="402" width="402" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <path id="svg_18" d="m92.5,120.183868l90.5,-24.183868l0,96.946228l-90,0.053772" stroke-opacity="0" stroke-width="0" stroke="url(#svg_17)" fill="#ffffff"/>
+  <path id="svg_19" d="m188.5,94.832153l115.5,-30.832157l0,128.928486l-114.861877,0.071518" stroke-opacity="0" stroke-width="0" stroke="url(#svg_17)" fill="#ffffff"/>
+  <path id="svg_20" d="m92.500015,261l90.500015,23l0,-83.948456l-90.000008,-0.051544" stroke-opacity="0" stroke-width="0" stroke="url(#svg_24)" fill="#ffffff"/>
+  <path id="svg_21" d="m188.5,286l115.5,30l0,-115.927994l-114.862,-0.072006" stroke-opacity="0" stroke-width="0" stroke="url(#svg_25)" fill="#ffffff"/>
+ </g>
+</svg>

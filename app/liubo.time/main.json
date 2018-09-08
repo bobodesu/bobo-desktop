@@ -1,0 +1,10 @@
+{
+    "name":"Bobo Big Screen Clock",
+    "ico":"<root>/time.svg",
+    "pos":[50,50,800,600],
+    "min":[200,100],
+    "max":[1200,1000],
+    "style":0,
+    "resize":true,
+    "val":"<root>/index.html"
+}

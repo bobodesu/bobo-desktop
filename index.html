@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bobo's desktop</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/vue.min.js"></script>
+    <script src="js/functionLibrary.js"></script>
+    <script src="js/deskapi.js"></script>
+</head>
+<body>
+    <div class="desktop">
+        <div class="fa-bg" :style="{backgroundImage:'url('+bg+')'}"></div>
+        <div class="fa-icon">
+            <icon v-for="i in icons" :val="i" @cli="iconclick"></icon>
+        </div>
+        <div class="fa-window">
+            <window v-for="(i,index) in windows" :val="i"
+                    :data-index="index"
+                    @windowmove="windowdown" @windowresize="windowresize" @windowclose="windowclose"
+                    @windowgetfocus="windowgetfocus"
+            ></window>
+        </div>
+        <div class="fa-windowchange"
+            @mousemove="windowmove" @mouseup="windowup"
+            :style="{
+                display:(nowwindowchange.status?'block':'none'),
+                cursor:nowwindowchange.cursor
+            }">
+        </div>
+        <div class="fa-footer">
+            <div class="footer-left"></div>
+            <div class="footer-right">
+                <div class="footer-fullscreen"></div>
+                <div class="footer-time">
+                    18:58<br>18/8/27
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/desktop.js"></script>
+</body>
+</html>

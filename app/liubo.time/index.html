@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bobo Big Screen Clock</title>
+    <style>
+        @font-face{
+            font-family: myfont;
+            src:url('num.ttf');
+        }
+        *{
+            margin:0;
+            padding:0;
+        }
+        .main{
+            width:100vw;
+            height:100vh;
+            color:#333;
+            transition: all 0.5s;
+        }
+        .time{
+            width:100vw;
+            font-size:13vw;
+            text-align: center;
+            display: inline-block;
+            font-family: myfont;
+        }
+        .w{
+            display:inline-block;
+            margin-top:5vw;
+            font-size:8vw;
+        }
+        .time.date{
+            width:auto;
+            font-size:4vw;
+            margin-top:25vh;
+            margin-bottom:3vh;
+            text-align: left;
+            padding-left:13vw;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="time date"></div>
+        <div class="time">
+            <span class="h"></span>
+            <br>
+            <div class="w"></div>
+        </div>
+    </div>
+    <script>
+        var ajax_get=function(url,callback){
+            var request = new XMLHttpRequest();
+            request.open("GET",url);
+            request.onreadystatechange = function(){
+                if(request.readyState !==4) return;
+                if(request.status == 200)
+                    callback(request.responseText);
+            }
+            request.send();
+        }
+        
+        var timediff=null;
+        var dq=x=>document.querySelectorAll(x)[0];
+        var h=0,m=0,s=0,w=0;
+        var light=true;
+        ajax_get("https://api.xiaoyy.org/public/v1/GetCurrentTime?type=cut&utc=true",function(e){
+            console.log(new Date().getTime(),e);
+            timediff=(new Date().getTime())/1000-e;
+            console.log("时间延迟："+timediff);
+            setInterval(function(){
+                var d=new Date();
+                d.setTime(d.getTime()-timediff);
+                if(d.getSeconds()==s&&d.getMinutes()==m&&d.getHours()==h)return;
+                h=d.getHours();
+                m=d.getMinutes();
+                s=d.getSeconds();
+                dq('.h').innerText=
+                    ((h<10?'0':'')+h).toString() + ' : ' +
+                    ((m<10?'0':'')+m).toString() + ' : ' +
+                    ((s<10?'0':'')+s).toString();
+                dq('.w').innerText='星期'+(
+                    ['日','一','二','三','四','五','六'][d.getDay()]
+                );
+                dq('.date').innerText=(
+                    d.getFullYear().toString() + ' / ' + 
+                    (d.getMonth()+1<10?'0':'') + (d.getMonth()+1).toString() + ' / ' +
+                    (d.getDate()<10?'0':'') + d.getDate()
+                );
+            },200);
+        });
+        setInterval(function(e){
+            ajax_get("https://api.xiaoyy.org/public/v1/GetCurrentTime?type=cut&utc=true",function(e){
+                timediff=(new Date().getTime())/1000-e;
+                console.log("时间已更新延迟，延迟："+timediff);
+            });
+        },900000);
+        document.body.onclick=function(){
+            light=(!light);
+            if(light){
+                dq('.main').style.backgroundColor="#fff";
+                dq('.main').style.color="#333";
+            }else{
+                dq('.main').style.backgroundColor="#222";
+                dq('.main').style.color="#fff";
+            }
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+[
+    {
+        "name": "百度",
+        "ico": "<root>/baidu.svg",
+        "on": "baidu.search"
+    },
+    {
+        "name": "BBS",
+        "ico": "<root>/time.svg",
+        "on": "liubo.time"
+    }
+]
